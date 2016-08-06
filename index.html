@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<title>Recently Added Neftlix</title>
+<head>
+
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lobster2' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
+
+
+
+	<script src ="jquery.js"></script>
+	<script src="handlebars-v4.0.5.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  <script src ="script.js"></script>
+
+
+</head>
+
+
+<body>
+
+
+
+
+
+<div class= "sort-wrapper">
+  <ul class = "sort-tab">
+  <ul class= "sort-rating">
+    <li id = "tab-imdb-sort">Sort by IMDB Rating</li>
+    <li id = "tab-metascore-sort">Sort by Metascore Rating</li>
+    <li id ="tab-popular-sort">Sort by Popular</li>
+    <li id ="tab-saved"><a href="#saved">Saved List</a></li>
+
+    </ul>
+
+    <ul class = "sort-genre">
+    <li id="tab-drama">Drama</li>
+    <li id="tab-comedy">Comedy</li>
+    <li id="tab-action">Action</li>
+    <li id="tab-adventure">Adventure</li>
+    <li id="tab-crime">Crime</li>
+    <li id="tab-horror">Horror</li>
+    <li id="tab-sci-fi">Sci-Fi</li>
+    <li id= "search-li"><div id="search-wrapper">
+        <form class="search-form">          
+        <input id ="search-bar"type="text" placeholder="Search...">
+        <div id ="search-button">
+          <svg class = "search" width="3vw" height="3vw">
+  <circle cx="40%" cy="40%" r= "30%"
+      stroke = "black" stroke-width="6%" fill="none"></circle>
+  
+   <line x1="66%" y1="50%" x2="100%" y2="80%" stroke="black" stroke-width="7%"></line>
+
+</svg>
+
+        </div>
+       </form>
+      </li>
+    </ul>
+</ul>
+
+
+</div>
+</div>
+<div id="clear-div"></div>
+
+<!-- Handlebars syntax
+script type is always the same
+change the id as you please, match with var source script
+
+{{}} are placeholders
+content inside of {{}} will be replaced by data you pass the templage here
+
+-->
+<script id="media-template" type="text/x-handlebars-template">
+<div id ="module-movie-wrapper-wrapper">
+<div id ="module-movie-wrapper">
+  <div class="module-movie" style ="background-image: url({{Poster}})" >
+    <a class = "small-screen-play-link" href="https://www.netflix.com/search/{{Title}}"></a>
+
+    
+    <div class = "description">
+
+<div class="description-movie-title">{{Title}}</div>
+
+  
+<div class ="description-release-date">Year of Release: {{Year}}</div>
+
+
+<div class = "description-summary">{{Plot}}</div>
+
+    <br>
+
+ <div class= "button-container">
+    <svg class = "netflix-play-button" width="50" height="50">
+       <a href="https://www.netflix.com/search/{{Title}}">
+
+  <circle cx="50%" cy="50%" r= "40%" stroke-width= "3px" stroke="white" fill="gray"></circle>
+  <line x1="20%" y1="25%" x2="90%" y2="50%" style="stroke:white" stroke-width="5%"></line>
+   <line x1="20%" y1="75%" x2="90%" y2="50%" style="stroke:white" stroke-width="5%"></line>
+  <line x1="20%" y1="25%" x2="20%" y2="75%" style="stroke:white" stroke-width="5%"></line>
+</svg></a>
+    
+    <svg class = "add-button" width="30" height="30">
+  <rect width="30" height = "30" stroke-width= "0px" stroke="blue" fill="gray"></rect>
+  <line x1="50%" y1="0%" x2="50%" y2="100%" style="stroke:blue" stroke-width="5%"></line>
+   <line x1="0%" y1="50%" x2="100%" y2="50%" style="stroke:blue" stroke-width="5%"></line>
+</svg>
+</div>
+
+</div>
+    <div class="movie-info">
+
+      <h3 class="movie-title"> {{Title}} </h3>
+
+      <!-- Can use this to add movie director
+      <p class="movie-director">
+        {{Director}}
+      </p>
+      -->
+      <p class="movie-imdb-rating">{{imdbRating}}</p>
+      <p class="movie-metascore-rating">{{Metascore}}</p>
+   
+
+<div class= "button-container">
+   
+    <svg class = "netflix-play-button" width="50" height="50">
+    <a href="https://www.netflix.com/search/{{Title}}">
+  <circle cx="50%" cy="50%" r= "40%" stroke-width= "3px" stroke="white" fill="gray"></circle>
+  <line x1="20%" y1="25%" x2="90%" y2="50%" style="stroke:white" stroke-width="5%"></line>
+   <line x1="20%" y1="75%" x2="90%" y2="50%" style="stroke:white" stroke-width="5%"></line>
+  <line x1="20%" y1="25%" x2="20%" y2="75%" style="stroke:white" stroke-width="5%"></line>
+</svg></a>
+    
+    <svg class = "add-button" width="30" height="30">
+  <rect width="30" height = "30" stroke-width= "0px" stroke="blue" fill="gray"></rect>
+  <line x1="50%" y1="0%" x2="50%" y2="100%" style="stroke:blue" stroke-width="5%"></line>
+   <line x1="0%" y1="50%" x2="100%" y2="50%" style="stroke:blue" stroke-width="5%"></line>
+
+</svg>
+ <svg class = "remove-button" width="30" height="30">
+  <rect width="30" height = "30" stroke-width= "0px" stroke="red" fill="gray"></rect>
+   <line x1="10%" y1="50%" x2="90%" y2="50%" style="stroke:red" stroke-width="10%"></line>
+
+</svg>
+</div>
+
+</div>
+
+
+      </p>
+      <p class="category, no-display">{{Genre}}</p>
+    </div>
+  </div>
+  </div>
+  </div>
+</script>
+
+<div id ="movies-wrapper">
+<section id="movies"></section>
+<section id ="saved"></section>
+</div>
+    
+<!--
+<div class="dialog-wrapper">
+ <div class= "dialog-container-wrapper">
+  <div class= "dialog-container">
+     <p class= "dialog-message">By clicking agree, you agree to the terms and conditions of this website.</p>
+    <div class = "dialog-button-agree"><p>Agree</div>
+    <div class = "dialog-button-disagree"><p>Disagree</p></div>
+   </div
+  </div>
+</div>
+	
+</section>
+</div>
+-->
+
+
+
+
+</body>
+</html>
