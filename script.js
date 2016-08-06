@@ -99,20 +99,25 @@ var data = {
 
 }
 
-//creating separate arrays for sorting; doesn't have to sort each time the function runs; gets rid of sort bugs
-var imdbArray;
-imdbArray = data.movies.slice().sort(function(a, b){
+//slice makes new array, filter gets rid of the N/A and null values (i.e. imdbRating: N/A), sort orders it
+imdbArray = data.movies.slice().filter(function (el) {
+  return el.imdbRating >=0;
+}).sort(function(a, b){
     var a1= a.imdbRating, b1= b.imdbRating;
     if(a1== b1) return 0;
     return a1<b1? 1: -1;
 });
 
-var metascoreArray;
-metascoreArray = data.movies.slice().sort(function(a, b){
+
+//slice makes new array, filter gets rid of the N/A and null values (i.e. imdbRating: N/A), sort orders it
+metascoreArray = data.movies.slice().filter(function (el) {
+  return el.Metascore >=0;
+}).sort(function(a, b){
     var a1= a.Metascore, b1= b.Metascore;
     if(a1== b1) return 0;
     return a1<b1? 1: -1;
 });
+
 
 
 function noMatches(){
