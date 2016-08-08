@@ -211,6 +211,8 @@ h2 {
 .add-button {
   -ms-flex-item-align: center;
   align-self: center; }
+  .add-button:active {
+    border: solid 3px black; }
   @media (max-width: 500px) {
     .add-button {
       width: 20px;
@@ -220,6 +222,8 @@ h2 {
   -ms-flex-item-align: center;
   align-self: center;
   display: none; }
+  .remove-button:active {
+    border: solid 3px black; }
   @media (max-width: 500px) {
     .remove-button {
       width: 20px;

@@ -295,6 +295,10 @@ background: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, .2));
   @extend %button-item;
   -ms-flex-item-align: center;
       align-self: center;
+
+  &:active{
+    border: solid 3px black;
+  }
   @media #{$small-screen}{
     width: 20px;
     height: 20px;
@@ -307,6 +311,9 @@ background: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, .2));
   -ms-flex-item-align: center;
       align-self: center;
   display: none;
+   &:active{
+    border: solid 3px black;
+  }
   @media #{$small-screen}{
     width: 20px;
     height: 20px;
