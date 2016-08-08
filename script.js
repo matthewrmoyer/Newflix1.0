@@ -4,7 +4,7 @@ $(document).ready(function(){
 //if any movies saved from other sessions, paste them into #saved
 //savedMovies is the localstorage key for the innerhtml of #saved from the last session
 //change from sessionStorage to localStorage when done programming
-var sm = sessionStorage.getItem("savedMovies");
+var sm = localStorage.getItem("savedMovies");
 console.log(sm);
 $("#saved").append(sm);
 
@@ -499,9 +499,9 @@ $("body").on("click", ".add-button", function(){
 
 
 //get local storage to save innerHTML of #saved so then can append to #saved section when page loads
-sessionStorage.setItem("savedMovies", savedMoviesStorage);
+localStorage.setItem("savedMovies", savedMoviesStorage);
 //setting localStorage to "savedMovies"
-var sm = sessionStorage.getItem("savedMovies");
+var sm = localStorage.getItem("savedMovies");
 
 //without this the click on the add-button would also click the module-movie
 e.stopPropagation();
@@ -526,9 +526,9 @@ $("body").on("click", ".remove-button", function(){
 
 
 //get local storage to save innerHTML of #saved so then can append to #saved section when page loads
-sessionStorage.setItem("savedMovies", savedMoviesStorage);
+localStorage.setItem("savedMovies", savedMoviesStorage);
 //setting localStorage to "savedMovies"
-var sm = sessionStorage.getItem("savedMovies");
+var sm = localStorage.getItem("savedMovies");
 
  
 
