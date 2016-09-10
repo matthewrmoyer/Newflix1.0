@@ -197,7 +197,7 @@ h2 {
       width: 30px;
       height: 30px; } }
 
-.button-container {
+.button-container, .button-container-on-poster {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
@@ -207,6 +207,12 @@ h2 {
   align-items: flex-end;
   -ms-flex-wrap: no-wrap;
   flex-wrap: no-wrap; }
+
+@media (min-width: 1300px) {
+  .button-container-on-poster {
+    position: absolute;
+    bottom: 10px;
+    left: -5px; } }
 
 .add-button {
   -ms-flex-item-align: center;
