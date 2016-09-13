@@ -369,7 +369,8 @@ background: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, .2));
 }
 .sort-rating li{
   @extend %sort-list;
-  width: 18vw;
+  //changed width from 18 when added the info tab
+  width: 15vw;
   margin: 5px 5px 2px 5px ;
   text-align: left;
 
@@ -379,13 +380,22 @@ background: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, .2));
     @extend %sort-list;
 
   }
-  a{
+a{
     width: 100%;
   color: $base-color;
   text-align: center;
   text-decoration: none;
   font-size: 2vmax;
 
+}
+
+#tab-info{
+  color: $accent-color;
+  cursor: default;
+  &:hover{
+    box-shadow: none;
+
+  }
 }
 
 

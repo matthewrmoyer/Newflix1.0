@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
 //TODO MORE THAN ONE FILTER AND CAN SORT THE CATEGORIES YOU WANT JUST KEEP THE WHITE LIGHT ON BEHIND ACTIVE FILTERS
-//TODO SHOW MOVIES WHEN PAGE LOADS RIGHT NOW #MOVIES IS BLANK ON LOAD
 //TODO OPTIONS FOR OTHER COUNTRIES
 //TODO ADD SHOWS AND MOVIES FROM OTHER COUNTRIES LET USER CHOOSE COUNTRY
 //TODO GET RID OF WHITE BORDER ON FIREFOX AROUND MODULE MOVIES? CHECK GITHUB ALREADY DID FOR OTHER MOVIE SITE
@@ -67,12 +66,22 @@ var movies = [
 "U­-571",
 "The Wicker Man",
 //TODO CHECK IF THE BELOW LINKS WORK
+
+//doesnt work
  "Wild Madagascar",
+
+ //doesnt work
 "The Womanizer",
+
+//doesnt work
 "The Year of Happiness and Love",
 "Baby Daddy",
 "Chef’s Table",
+
+//doesnt work
 "Kazoops",
+
+//doesnt work
 "Kulipari",
 "Narcos",
 "Young %26 Hungry",
@@ -210,6 +219,10 @@ noMatches();
 }
 
 function showComedy(){
+
+
+
+
     $("#movies").empty();
 
   for (i = 0; i < movieInfo.length; i++) {
@@ -320,6 +333,13 @@ noMatches();
 }
 
 function showSciFi(){
+
+//set up so that you can have more than one category at once
+//clone movies
+//var moviesClone = $(".module-movie").clone();
+
+
+
     $("#movies").empty();
 
   for (i = 0; i < movieInfo.length; i++) {
@@ -329,6 +349,9 @@ function showSciFi(){
   $("#movies").append(html);
 };
 $("#movies .module-movie:not(:contains('Sci-Fi'))").remove();
+
+// add the clones here $("#movies").append(moviesClone);
+
 $(".movie-metascore-rating:contains('N')").remove().addClass("clearBefore");
 $(".movie-metascore-rating:empty").remove().addClass("clearBefore");
 

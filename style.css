@@ -263,7 +263,7 @@ h2 {
     box-shadow: 0 0 20px 0px white; }
 
 .sort-rating li {
-  width: 18vw;
+  width: 15vw;
   margin: 5px 5px 2px 5px;
   text-align: left; }
 
@@ -273,6 +273,12 @@ a {
   text-align: center;
   text-decoration: none;
   font-size: 2vmax; }
+
+#tab-info {
+  color: #005D5D;
+  cursor: default; }
+  #tab-info:hover {
+    box-shadow: none; }
 
 .sort-genre {
   display: block;
