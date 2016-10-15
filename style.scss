@@ -413,6 +413,7 @@ a{
   float: left;
   position: relative;
   width: 100vw;
+  z-index: 10;
 }
 
 
@@ -469,7 +470,7 @@ a{
   height: 100%; 
 }
 
-#search-form{
+.search-form{
 height: 100%;
 }
 
@@ -682,3 +683,120 @@ width: 100%;
   }
 }
 
+.black-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5555;
+  background-color: black;
+}
+
+//sort overlay
+.sort-wrapper-o{
+  @extend .sort-wrapper;
+   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+.sort-tab-o{
+  @extend .sort-tab;
+}
+.sort-rating-o{
+  @extend .sort-rating;
+}
+#tab-imdb-sort-o{
+      font-size: 3vmax;
+      width: 20vw;
+
+}
+#tab-metascore-sort-o{
+      font-size: 3vmax;
+      width: 20vw;
+
+}
+#tab-popular-sort-o{
+      font-size: 3vmax;
+      width: 20vw;
+
+}
+#tab-saved-o{  
+  @extend #tab-saved;
+      font-size: 3vmax;
+
+}
+#tab-info-o{
+      @extend #tab-info; 
+      font-size: 3vmax;
+ 
+}
+.sort-genre-o{
+        @extend .sort-genre;
+        font-size: 3vmax;
+
+}
+#tab-drama-o{
+      font-size: 3vw;
+      width: 11.5vw;
+
+}
+#tab-comedy-o{
+      font-size: 3vw;
+      width: 11.5vw;
+
+}
+#tab-action-o{
+      font-size: 3vw;
+      width: 11.5vw;
+
+}
+#tab-adventure-o{
+      font-size: 3vw;
+      width: 11.5vw;
+
+}
+#tab-crime-o{
+      font-size: 3vw;
+      width: 11.5vw;
+
+}
+#tab-horror-o{
+      font-size: 3vw;
+      width: 11.5vw;
+
+}
+#tab-sci-fi-o{
+      font-size: 3vw;
+      width: 11.5vw;
+
+}
+#search-li-o{
+  @extend #search-li;
+}
+#search-wrapper-o{
+  @extend #search-wrapper;
+}
+
+.search-form-o{
+  //check out this one from above is it class or div
+  @extend .search-form;
+}
+
+#seach-bar-o{
+  @extend #search-bar;
+}
+
+#search-button-o{
+  @extend #search-button;
+}
+
+.overlay-message{
+  color: white;
+  text-align: center;
+  font-size: 5vmax;
+  color: $secondary-color;
+}
+//end sort overlay

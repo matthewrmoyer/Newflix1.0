@@ -4,10 +4,8 @@ $(document).ready(function(){
 //TODO OPTIONS FOR OTHER COUNTRIES
 //TODO ADD SHOWS AND MOVIES FROM OTHER COUNTRIES LET USER CHOOSE COUNTRY
 //TODO GET RID OF WHITE BORDER ON FIREFOX AROUND MODULE MOVIES? CHECK GITHUB ALREADY DID FOR OTHER MOVIE SITE
-//TODO ON LARGE SCREENS MOVE PLAY AND ADD BUTTONS TO BOTTOM 
-//if any movies saved from other sessions, paste them into #saved
-//savedMovies is the localstorage key for the innerhtml of #saved from the last session
-//change from sessionStorage to localStorage when done programming
+
+//TODO ADD CLICK FUNCTIONS TO SORT-O TABS
 var sm = localStorage.getItem("savedMovies");
 $("#saved").append(sm);
 
@@ -17,8 +15,6 @@ var movies = [
 //from http://www.digitaltrends.com/home-theater/whats-new-on-netflix-shows-movies/
 //sept 1 and 2
 
-//TODO ISSUE LOADING MOVIES WITH SPECIAL CHARACTERS (BILL & TEDS, YOUNG & HUNGRY)
-//JUST CHANGE & TO %26 (looks like this is what the omdb api does)
 //THIS IS A KEY ON WHAT TO CHANGE SPECIAL CHARACTERS TO: http://www.w3schools.com/tags/ref_urlencode.asp
 //FIX U571 LINK WORKS ON IMDB API
 "The Amityville Horror",
@@ -85,6 +81,50 @@ var movies = [
 "Kulipari",
 "Narcos",
 "Young %26 Hungry",
+
+
+///rest of september
+"Crash",
+"The Finest Hours",
+"Hard Target 2",
+"Honey 3",
+"R.L. Stine’s Mostly Ghostly",
+"The Blacklist",
+"Galavant",
+"Supergirl",
+"Extremis",
+"London Has Fallen",
+"Goldie & Bear",
+"Sample This",
+"The Walking Dead",
+"Cedric The Entertainer",
+"Raiders",
+"The White Helmets",
+"3 Days to Kill",
+"Luther",
+"Penny Dreadful",
+"Call the Midwife",
+"Gotham",
+"Colliding Dreams",
+"New Girl",
+"Zootopia",
+"Bones",
+"Easy",
+"Wallander: Series 4",
+"Audrie & Daisy",
+"Iliza Shlesinger",
+"Last Man Standing",
+"Longmire",
+"VeggieTales in the House",
+"Portlandia",
+"River",
+"Family Guy",
+"Margaret Cho: PsyCHO",
+"The Fosters",
+"The Imitation Game",
+"Amanda Knox",
+"Luke Cage",
+"Scream",
 ];
 
 
@@ -640,14 +680,86 @@ $(".movie-imdb-rating:empty").remove().addClass("clearBefore");
 //TODO nested if statements increasing timeout length until movieInfo.length is the correct
 //call after popularSort after 1 second
 
-
-setTimeout(function (){
+//fixed?????????????? fixed above todo!!!?!??!?!
+if(movieInfo.length>40){
+  popularSort();
+} else setTimeout(function (){
 
 
   popularSort();
-  console.log(movieInfo[40]);
+  console.log(movieInfo.length);
 
-}, 500); 
+}, 500);
 
+
+
+$("#tab-imdb-sort-o").on("click", function(){
+  $(".sort-wrapper-o").fadeOut("slow");
+  $(".black-overlay").fadeOut("slow");
+  imdbSort();
+})
+
+
+$("#tab-metascore-sort-o").on("click", function(){
+  $(".sort-wrapper-o").fadeOut("slow");
+  $(".black-overlay").fadeOut("slow");
+  metascoreSort();
+})
+$("#tab-popular-sort-o").on("click", function(){
+  $(".sort-wrapper-o").fadeOut("slow");
+  $(".black-overlay").fadeOut("slow");
+  popularSort();
+})
+
+
+$("#tab-saved").on("click", function(){
+    $(".sort-wrapper-o").fadeOut("slow");
+  $(".black-overlay").fadeOut("slow");
+ window.location = $(this).find("a").attr("href"); 
 
 });
+
+$("#tab-drama-o").on("click", function(){
+  $(".sort-wrapper-o").fadeOut("slow");
+  $(".black-overlay").fadeOut("slow");
+  showDrama();
+
+})
+$("#tab-comedy-o").on("click", function(){
+  $(".sort-wrapper-o").fadeOut("slow");
+  $(".black-overlay").fadeOut("slow");
+  showComedy();
+})
+
+$("#tab-action-o").on("click", function(){
+  $(".sort-wrapper-o").fadeOut("slow");
+  $(".black-overlay").fadeOut("slow");
+  showAction();
+})
+$("#tab-adventure-o").on("click", function(){
+  $(".sort-wrapper-o").fadeOut("slow");
+  $(".black-overlay").fadeOut("slow");
+  showAdventure();
+})-
+$("#tab-crime-o").on("click", function(){
+  $(".sort-wrapper-o").fadeOut("slow");
+  $(".black-overlay").fadeOut("slow");
+  showCrime();
+})
+$("#tab-horror-o").on("click", function(){
+  $(".sort-wrapper-o").fadeOut("slow");
+  $(".black-overlay").fadeOut("slow");
+  showHorror();
+})
+$("#tab-sci-fi-o").on("click", function(){
+  $(".sort-wrapper-o").fadeOut("slow");
+  $(".black-overlay").fadeOut("slow");
+  showSciFi();
+})
+
+});
+
+
+
+
+

@@ -238,14 +238,14 @@ h2 {
 .faded {
   opacity: .5; }
 
-.sort-tab {
+.sort-tab, .sort-tab-o {
   width: 100%;
   text-align: center; }
 
-.sort-rating {
+.sort-rating, .sort-rating-o {
   display: block; }
 
-.sort-rating li, #tab-saved, .sort-genre li {
+.sort-rating li, .sort-rating-o li, #tab-saved, #tab-saved-o, .sort-genre li, .sort-genre-o li {
   display: inline-block;
   color: #9b0000;
   height: 2em;
@@ -259,10 +259,10 @@ h2 {
   text-align: center;
   cursor: pointer;
   font-family: "Lobster2", Georgia, Times, serif; }
-  .sort-rating li:hover, #tab-saved:hover, .sort-genre li:hover {
+  .sort-rating li:hover, .sort-rating-o li:hover, #tab-saved:hover, #tab-saved-o:hover, .sort-genre li:hover, .sort-genre-o li:hover {
     box-shadow: 0 0 20px 0px white; }
 
-.sort-rating li {
+.sort-rating li, .sort-rating-o li {
   width: 15vw;
   margin: 5px 5px 2px 5px;
   text-align: left; }
@@ -274,24 +274,25 @@ a {
   text-decoration: none;
   font-size: 2vmax; }
 
-#tab-info {
+#tab-info, #tab-info-o {
   color: #005D5D;
   cursor: default; }
-  #tab-info:hover {
+  #tab-info:hover, #tab-info-o:hover {
     box-shadow: none; }
 
-.sort-genre {
+.sort-genre, .sort-genre-o {
   display: block;
   clear: both; }
 
-.sort-genre li {
+.sort-genre li, .sort-genre-o li {
   width: 10vw;
   margin: 10px 5px 2px 5px; }
 
-.sort-wrapper {
+.sort-wrapper, .sort-wrapper-o {
   float: left;
   position: relative;
-  width: 100vw; }
+  width: 100vw;
+  z-index: 10; }
 
 #clear-div {
   clear: both; }
@@ -319,7 +320,7 @@ a {
   #saved:empty {
     color: #333; }
 
-#search-li {
+#search-li, #search-li-o {
   width: 20vw;
   border-top: gray;
   border-bottom: gray;
@@ -327,13 +328,13 @@ a {
   border-right: gray;
   border-style: solid; }
 
-#search-wrapper {
+#search-wrapper, #search-wrapper-o {
   height: 100%; }
 
-#search-form {
+.search-form, .search-form-o {
   height: 100%; }
 
-#search-bar {
+#search-bar, #seach-bar-o {
   display: inline;
   width: 80%;
   float: left;
@@ -343,10 +344,10 @@ a {
   color: gray;
   height: 100%; }
 
-#search-bar:focus {
+#search-bar:focus, #seach-bar-o:focus {
   outline: none; }
 
-#search-button {
+#search-button, #search-button-o {
   display: inline;
   width: 20%;
   float: right;
@@ -481,5 +482,76 @@ a {
       font-size: 14px; } }
   .no-matches:before {
     content: "No Matching Movies"; }
+
+.black-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5555;
+  background-color: black; }
+
+.sort-wrapper-o {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; }
+
+#tab-imdb-sort-o {
+  font-size: 3vmax;
+  width: 20vw; }
+
+#tab-metascore-sort-o {
+  font-size: 3vmax;
+  width: 20vw; }
+
+#tab-popular-sort-o {
+  font-size: 3vmax;
+  width: 20vw; }
+
+#tab-saved-o {
+  font-size: 3vmax; }
+
+#tab-info-o {
+  font-size: 3vmax; }
+
+.sort-genre-o {
+  font-size: 3vmax; }
+
+#tab-drama-o {
+  font-size: 3vw;
+  width: 11.5vw; }
+
+#tab-comedy-o {
+  font-size: 3vw;
+  width: 11.5vw; }
+
+#tab-action-o {
+  font-size: 3vw;
+  width: 11.5vw; }
+
+#tab-adventure-o {
+  font-size: 3vw;
+  width: 11.5vw; }
+
+#tab-crime-o {
+  font-size: 3vw;
+  width: 11.5vw; }
+
+#tab-horror-o {
+  font-size: 3vw;
+  width: 11.5vw; }
+
+#tab-sci-fi-o {
+  font-size: 3vw;
+  width: 11.5vw; }
+
+.overlay-message {
+  color: white;
+  text-align: center;
+  font-size: 5vmax;
+  color: #333; }
 
 /*# sourceMappingURL=style.css.map */
