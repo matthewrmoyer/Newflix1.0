@@ -39,9 +39,6 @@ h2 {
   p {
     font-size: 12px; } }
 
-#module-movie-wrapper-wrapper {
-  width: 100%; }
-
 /* need to change this width if you decide on a different amount of movies for each row*/
 #module-movie-wrapper {
   width: 116%; }
